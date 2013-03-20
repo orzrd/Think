@@ -17,6 +17,7 @@ sudo make install
 ----------
 
 入门 [try_git][]
+
 练习 [gitreal][]
 [try_git]: http://try.github.com
 [gitreal]: http://gitreal.codeschool.com
@@ -73,15 +74,13 @@ doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
 * 取消对文件的修改：git checkout -- file
 * 命令别名，几个例子,当然使用oh-my-zsh的git插件已经设计了很多命令简写
 
-> git config --global alias.co checkout
+> git config --global alias.co checkout #执行时候只需要 git co  就表示 git checkout
 
 > git config --global alias.br branch
 
 > git config --global alias.ci commit
 
 > git config --global alias.st status
-
-比如第一条 执行时候只需要 git co  就表示 git checkout
 
 * 使用rebase 原理是回到两个分支（你所在的分支和你想要衍合进去的分支）的共同祖先，提取你
 所在分支每次提交时产生的差异（diff），把这些差异分别保存到临时文件里，然后从当前
@@ -92,7 +91,9 @@ doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
 * 推送到不同名分支 git push origin localbranch:remotebranch
 * 应用补丁 git apply/am /tmp/patch-ruby-client.patch（工作中总结）
 * pull 和 fetch+merge ，在实际使用中，git fetch更安全一些，表示某个branch在服务器上的最新状态
-[git: fetch and merge, don't pull]: http://longair.net/blog/2009/04/16/git-fetch-and-merge
+
+git: fetch and merge, don’t pull [fetchpull][]
+[fetchpull]: http://longair.net/blog/2009/04/16/git-fetch-and-merge
 
 
 
