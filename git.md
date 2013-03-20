@@ -36,8 +36,41 @@ sudo make install
 
 * 回退版本的选择：一般使用HEAD，但是可以在git log的输出里面找到相应的commit的哈希串的前几位。偏移三种办法：
 
-  > HEAD@{2}
-  
-  > HEAD^^
-  
-  > HEAD~2
+> HEAD@{2}
+
+> HEAD^^
+
+> HEAD~2
+
+* 忽略某些文件，既可以在.gitignore也可以在项目的.git/info/exclude指定：
+
+```
+*.[oa]
+*~
+*.pyc
+*.swp
+settings_real.py
+```
+
+其它语法：
+
+```
+# 此为注释 – 将被 Git 忽略
+*.a # 忽略所有 .a 结尾的文件
+!lib.a # 但 lib.a 除外
+/TODO # 仅仅忽略项目根目录下的 TODO 文件,不包括 subdir/TODO
+build/ # 忽略 build/ 目录下的所有文件
+doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+```
+
+* commit直接跳过缓存区  加 -a 但是这样不安全
+* 删除远程分支，2种方法：
+
+> git push origin --delete <branchName> #1.7版本之后
+
+> git push origin :<branchName> #其实就是推送分支
+
+* 取消对文件的修改：git checkout -- <file>
+
+
+
