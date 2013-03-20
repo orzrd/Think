@@ -31,6 +31,7 @@ sudo make install
 > git reset --soft 回退版本，只回退commit
 > git reset --hard 彻底回退到某个版本，本地的源码也会变为上一个版本的内容 
 - 回退版本的选择：一般使用HEAD，但是可以在git log的输出里面找到相应的commit的哈希串的前几位。偏移三种办法：
+
   > HEAD@{2}
   > HEAD^^
   > HEAD~2
