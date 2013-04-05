@@ -91,6 +91,12 @@ doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
 * 推送到不同名分支 git push origin localbranch:remotebranch
 * 应用补丁 git apply/am /tmp/patch-ruby-client.patch（工作中总结）
 * pull 和 fetch+merge ，在实际使用中，git fetch更安全一些，表示某个branch在服务器上的最新状态
+ 
+ 
+* 修补提交命令 
+> 使用参数--reset-author会将提交信息中的属性Author连同AuthorDate一并修改，否则只修改Commit和CommitDate。
+参数-C HEAD维持提交说明不变
+> git commit --amend --reset-author -C HEAD
 
 git: fetch and merge, don’t pull [fetchpull][]
 [fetchpull]: http://longair.net/blog/2009/04/16/git-fetch-and-merge
